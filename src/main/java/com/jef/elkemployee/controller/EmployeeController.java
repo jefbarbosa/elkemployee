@@ -22,6 +22,11 @@ public class EmployeeController {
         return new ResponseEntity<>("Created", HttpStatus.CREATED);
     }
 
+    @GetMapping("/find-all-by-first-name")
+    public ResponseEntity<List<Employee>> findAllByFirstNameLike(@RequestParam("first-name") String firstName) {
+        return new ResponseEntity<>(employeeService.findAllByFirstNameLike(firstName), HttpStatus.OK);
+    }
+
     @GetMapping("/find-by-first-name")
     public ResponseEntity<Employee> findByFirstNameLike(@RequestParam("first-name") String firstName) {
         return new ResponseEntity<>(employeeService.findByFirstNameLike(firstName), HttpStatus.OK);

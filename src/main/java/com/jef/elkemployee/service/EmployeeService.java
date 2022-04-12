@@ -18,6 +18,10 @@ public class EmployeeService {
         return employeeRepository.save(employee);
     }
 
+    public List<Employee> findAllByFirstNameLike(String firstName) {
+        return employeeRepository.findAllByFirstNameLike(firstName);
+    }
+
     public Employee findByFirstNameLike(String firstName) {
         return employeeRepository.findByFirstNameLike(firstName);
     }
